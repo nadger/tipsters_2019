@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    
+    <title>Tipsters - Entry Form</title>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <div class="container">
+  <div class="py-3 text-center">
+    <img class="d-block mx-auto mb-3" src="http://khssc.co.uk/wp-content/uploads/2017/05/cropped-title-2-1.jpg" alt="" width="700" height="100">
+    <h2>Tipsters Entry Form Week 40</h2>
+    <p class="lead">Sunday May 9th 2019</p>
+  </div>
+
+  <div class="row">
+    <div class="col-sm text-center">
+      <h5>Home</h5>
+    </div>
+    <div class="col-sm text-center">
+      Score
+    </div>
+    <div class="col-sm text-center">
+      Score
+    </div>
+    <div class="col-sm text-center">
+      <h5>Away</h5>
+    </div>
+  </div>
+
+
+{% for item in fixtures %}
+    <div class="row">
+  <div class="col-sm text-center">
+      <h5>{{ item.home_team }}</h5>
+    </div>
+    <div class="col-sm text-center">
+      <div>
+    <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    </div>
+    </div>
+    <div class="col-sm text-center">
+      <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    </div>
+    <div class="col-sm text-center">
+      <h5>{{ item.away_team }}</h5> 
+    </div>
+</div>
+    {% endfor %}
+</div>
+
+
+</div>
+<br>
+<div>
+<button class="btn btn-primary btn-lg btn-block" type="submit">Submit Entry</button>
+</div>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019 K.H.S.S.C</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
+
+
+{% endblock %}
