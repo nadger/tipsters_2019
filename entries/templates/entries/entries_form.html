@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-
+{% load static %}
 
 
 <!doctype html>
@@ -13,36 +13,22 @@
     
     <title>Tipsters - Entry Form</title>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+    
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body class="bg-white">
     <div class="container">
   <div class="py-3 text-center">
-    <img class="d-block mx-auto mb-3" src="http://khssc.co.uk/wp-content/uploads/2017/05/cropped-title-2-1.jpg" alt="" width="700" height="100">
+    <!--<img class="d-block mx-auto mb-3" src="http://khssc.co.uk/wp-content/uploads/2017/05/cropped-title-2-1.jpg" alt="" width="700" height="100"> -->
+    <img class="mb-4" src="{% static "/entries/logo_small.jpg" %}" alt="" width="100" height="100">
     <h2>Tipsters Entry Form Week 40</h2>
     <p class="lead">Sunday May 9th 2019</p>
   </div>
 
   <div class="row">
     <div class="col-3 text-center">
-      <h5>Home</h5>
+      <h4>Home</h4>
     </div>
     <div class="col-3 text-center">
       Score
@@ -51,7 +37,7 @@
       Score
     </div>
     <div class="col-3 text-center">
-      <h5>Away</h5>
+      <h4>Away</h4>
     </div>
   </div>
 
