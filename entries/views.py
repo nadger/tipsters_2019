@@ -10,6 +10,12 @@ def login(request):
 def menu(request):
 	return render(request, 'entries/menu.html')
 
+def league(request):
+	return render(request, 'entries/menu.html')
+
+def gwresult(request):
+	return render(request, 'entries/results.html')
+
 
 def index(request):
     fixtures = Fixtures.objects.all()
