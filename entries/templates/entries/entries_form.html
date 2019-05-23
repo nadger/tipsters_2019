@@ -32,7 +32,7 @@
   <div class="py-3 text-center">
     <!--<img class="d-block mx-auto mb-3" src="http://khssc.co.uk/wp-content/uploads/2017/05/cropped-title-2-1.jpg" alt="" width="700" height="100"> -->
     <!--<img class="mb-4" src="{% static "/entries/logo_small.jpg" %}" alt="" width="100" height="100"> -->
-    <h2>Tipsters Entry Form Week 40</h2>
+    <h2>Game Week 40</h2>
     <p class="lead">Sunday May 9th 2019</p>
   </div>
 
@@ -85,10 +85,10 @@
 
 <br><br>
 <div class="row">
-    <div class="col-3 text-center">
+    <div class="col-3 text-left">
       <h5>Total Goals</h5>
     </div>
-    <div class="col-3 text-center">
+    <div class="col-3 text-left">
       <select class="form-control form-control-3" id="exampleFormControlSelect1">
         <option>1</option>
         <option>2</option>
@@ -100,29 +100,59 @@
 </div>
 <Br>
 <div class="row">
-    <div class="col-3 text-center">
+    <div class="col-3 text-left">
       <h5>Questions</h5>
     </div>
   </div>
 
 
+{% for q in questions %}
+
 <div class="row">
-    <div class="col-3 text-center">
-      <h7>Red cards asdasdsa</h7>
+    <div class="col-5 text-left">
+      <h7>{{ q.question_text }}</h7>
     </div>
-    <div class="col-3 text-center">
+    <div class="col-3 text-left">
      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
   <label class="form-check-label" for="exampleRadios1">
     True
   </label>
     </div>
-    <div class="col-3 text-center">
+    <div class="col-3 text-left">
      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
   <label class="form-check-label" for="exampleRadios1">
     False
   </label>
     </div>
 </div>
+{% endfor %}
+<br>
+<div class="row">
+    <div class="col-3 text-left">
+      <h5>Scorers</h5>
+    </div>
+  </div>
+
+  <form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">4 Points</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player Name/Team">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">3 points</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">2 points</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">1 points</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+  </div>
+
+
+</form>
 
 <br>
 <div>
