@@ -7,6 +7,9 @@ from entries.models import Fixtures
 def login(request):
 	return render(request, 'entries/login.html')
 
+def menu(request):
+	return render(request, 'entries/menu.html')
+
 
 def index(request):
     fixtures = Fixtures.objects.all()
