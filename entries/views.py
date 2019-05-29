@@ -18,11 +18,15 @@ def gwresult(request):
 
 
 def index(request):
+    goalrange = range(10)
+    totalgoals = range(50)
     fixtures = Fixtures.objects.all()
     questions = Question.objects.all()
     context = {
         'fixtures': fixtures,
-        'questions': questions
+        'questions': questions,
+        'goalrange': goalrange,
+        'totalgoals': totalgoals
     }
     
     return render(request, 'entries/entries_form.html', context)
