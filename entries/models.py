@@ -33,8 +33,7 @@ class Question(models.Model):
     game_week = models.PositiveIntegerField(default=0)
 	
 class Players(models.Model):
-	player_fname = models.CharField(max_length=100)
-	player_lname = models.CharField(max_length=100)
+	player_name = models.CharField(max_length=100)
 	player_team = models.ForeignKey(Teams, on_delete=models.CASCADE)
 
 #needs work
