@@ -12,12 +12,6 @@ class Fixtures(models.Model):
 	game_week = models.PositiveIntegerField(default=0)
 
 class Question(models.Model):
-    #TRUE = 'TRUE'
-    #FALSE = 'FALSE'
-    #Q_CHOICES = [(TRUE, 'True'), (FALSE, 'False')]
-	#answer = models.CharField(max_length=10, choices=Q_CHOICES, default=TRUE
-	#question_text = models.CharField(max_length=200)
-    #game_week = models.PositiveIntegerField(default=0)
     TRUE = 'TRUE'
     FALSE = 'FASLE'
     Q_CHOICES = [
@@ -35,6 +29,57 @@ class Question(models.Model):
 class Players(models.Model):
 	player_name = models.CharField(max_length=100)
 	player_team = models.ForeignKey(Teams, on_delete=models.CASCADE)
+
+class configdata(models.Model):
+	current_gw = models.PositiveIntegerField(default=0)
+	current_season = models.PositiveIntegerField(default=2019)
+
+class entry_data(models.Model):
+	entry_gw = models.PositiveIntegerField(default=0)
+	entry_season = models.PositiveIntegerField(default=2019)
+	team_id = models.PositiveIntegerField(default=2019)
+	score_home_fix1 = models.PositiveIntegerField(default=0)
+	score_home_fix2 = models.PositiveIntegerField(default=0)
+	score_home_fix3 = models.PositiveIntegerField(default=0)
+	score_home_fix4 = models.PositiveIntegerField(default=0)
+	score_home_fix5 = models.PositiveIntegerField(default=0)
+	score_home_fix6 = models.PositiveIntegerField(default=0)
+	score_home_fix7 = models.PositiveIntegerField(default=0)
+	score_home_fix8 = models.PositiveIntegerField(default=0)
+	score_home_fix9 = models.PositiveIntegerField(default=0)
+	score_home_fix10 = models.PositiveIntegerField(default=0)
+	score_away_fix1 = models.PositiveIntegerField(default=0)
+	score_away_fix2 = models.PositiveIntegerField(default=0)
+	score_away_fix3 = models.PositiveIntegerField(default=0)
+	score_away_fix4 = models.PositiveIntegerField(default=0)
+	score_away_fix5 = models.PositiveIntegerField(default=0)
+	score_away_fix6 = models.PositiveIntegerField(default=0)
+	score_away_fix7 = models.PositiveIntegerField(default=0)
+	score_away_fix8 = models.PositiveIntegerField(default=0)
+	score_away_fix9 = models.PositiveIntegerField(default=0)
+	score_away_fix10 = models.PositiveIntegerField(default=0)
+	score_away_fix11 = models.PositiveIntegerField(default=0)
+	score_tg = models.PositiveIntegerField(default=0)
+	entry_q1 = models.CharField(max_length=5)
+	entry_q2 = models.CharField(max_length=5)
+	entry_q3 = models.CharField(max_length=5)
+	entry_q4 = models.CharField(max_length=5)
+	entry_q5 = models.CharField(max_length=5)
+	entry_q6 = models.CharField(max_length=5)
+	entry_q7 = models.CharField(max_length=5)
+	entry_q8 = models.CharField(max_length=5)
+	entry_q9 = models.CharField(max_length=5)
+	entry_q10 = models.CharField(max_length=5)
+	entry_player1 = models.CharField(max_length=20)
+	entry_player2 = models.CharField(max_length=20)
+	entry_player3 = models.CharField(max_length=20)
+	entry_player4 = models.CharField(max_length=20)
+
+	"""docstring for entry_data"""
+	def __init__(self, arg):
+		super(entry_data, self).__init__()
+		self.arg = arg
+		
 
 #needs work
 class Results(models.Model):

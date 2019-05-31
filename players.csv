@@ -1,46 +1,46 @@
-1, Salah                , Liverpool      
-2, Hazard               , Chelsea        
-3, Sterling             , Man City       
-4, Mané                 , Liverpool      
-5, Robertson            , Liverpool      
-6, van Dijk             , Liverpool      
+1, Salah                ,3
+2, Hazard               ,2
+3, Sterling             ,7
+4, Mané                 ,3
+5, Robertson            ,3
+6, van Dijk             ,3
 7, Aubameyang           , Arsenal        
-8, Agüero               , Man City       
-9, Alexander-Arnold     , Liverpool      
+8, Agüero               ,7
+9, Alexander-Arnold     ,3
 10, Sigurdsson           , Everton        
 11, Fraser               , Bournemouth    
 12, Jiménez              , Wolves         
-13, Pogba                , Man Utd        
-14, Laporte              , Man City       
-15, Ramses Becker        , Liverpool      
+13, Pogba                ,6
+14, Laporte              ,7
+15, Ramses Becker        ,3
 16, Vardy                , Leicester      
-17, Santana de Moraes    , Man City       
+17, Santana de Moraes    ,7
 18, Wilson               , Bournemouth    
 19, Lacazette            , Arsenal        
 20, Milivojevic          , Crystal Palace 
-21, Luiz Moreira Marinho , Chelsea        
-22, Alonso               , Chelsea        
+21, Luiz Moreira Marinho ,2
+22, Alonso               ,2
 23, Pickford             , Everton        
-24, Eriksen              , Spurs          
-25, Firmino              , Liverpool      
-26, Kane                 , Spurs          
-27, Son                  , Spurs          
-28, Azpilicueta          , Chelsea        
+24, Eriksen              ,8
+25, Firmino              ,3
+26, Kane                 ,8
+27, Son                  ,8
+28, Azpilicueta          ,2
 29, Digne                , Everton        
-30, Sané                 , Man City       
+30, Sané                 ,7
 31, Pereira Gomes        , West Ham       
 32, Etheridge            , Cardiff        
-33, Veiga de Carvalho e  , Man City       
+33, Veiga de Carvalho e  ,7
 34, de Andrade           , Everton        
-35, Walker               , Man City       
+35, Walker               ,7
 36, Rondón               , Newcastle      
 37, Barbosa Pereira      , Leicester      
-38, Lloris               , Spurs          
+38, Lloris               ,8
 39, Doherty              , Wolves         
 40, Zaha                 , Crystal Palace 
-41, Silva                , Man City       
+41, Silva                ,7
 42, Fabianski            , West Ham       
-43, Arrizabalaga         , Chelsea        
+43, Arrizabalaga         ,2
 44, King                 , Bournemouth    
 45, Pérez                , Newcastle      
 46, van Aanholt          , Crystal Palace 
@@ -50,78 +50,78 @@
 50, Townsend             , Crystal Palace 
 51, Mitrovic             , Fulham         
 52, Deulofeu             , Watford        
-53, Wood                 , Burnley        
+53, Wood                 ,5
 54, Dubravka             , Newcastle      
-55, Rodrigues Moura da S , Spurs          
-56, Murray               , Brighton       
+55, Rodrigues Moura da S ,8
+56, Murray               ,1
 57, Keane                , Everton        
 58, Foster               , Watford        
-59, Rashford             , Man Utd        
+59, Rashford             ,6
 60, Coleman              , Everton        
 61, Doucouré             , Watford        
 62, Brooks               , Bournemouth    
-63, Barnes               , Burnley        
-64, Martial              , Man Utd        
+63, Barnes               ,5
+64, Martial              ,6
 65, Pereyra              , Watford        
 66, McArthur             , Crystal Palace 
 67, Aké                  , Bournemouth    
 68, Wan-Bissaka          , Crystal Palace 
 69, Schmeichel           , Leicester      
-70, de Gea               , Man Utd        
+70, de Gea               ,6
 71, Boly                 , Wolves         
 72, Santos Moutinho      , Wolves         
 73, Chilwell             , Leicester      
-74, Trippier             , Spurs          
+74, Trippier             ,8
 75, Antonio              , West Ham       
 76, dos Santos Patrício  , Wolves         
 77, Arnautovic           , West Ham       
-78, Rüdiger              , Chelsea        
-79, Kanté                , Chelsea        
+78, Rüdiger              ,2
+79, Kanté                ,2
 80, Deeney               , Watford        
-81, Duffy                , Brighton       
-82, Lukaku               , Man Utd        
-83, Gündogan             , Man City       
-84, Rodríguez Ledesma    , Chelsea        
+81, Duffy                ,1
+82, Lukaku               ,6
+83, Gündogan             ,7
+84, Rodríguez Ledesma    ,2
 85, Zouma                , Everton        
-86, Westwood             , Burnley        
+86, Westwood             ,5
 87, Ritchie              , Newcastle      
-88, Borges Da Silva      , Chelsea        
-89, Wijnaldum            , Liverpool      
-90, Alderweireld         , Spurs          
+88, Borges Da Silva      ,2
+89, Wijnaldum            ,3
+90, Alderweireld         ,8
 91, Leno                 , Arsenal        
 92, Camarasa             , Cardiff        
-93, Ryan                 , Brighton       
+93, Ryan                 ,1
 94, da Silva Neves       , Wolves         
 95, Castro Otto          , Wolves         
-96, Mahrez               , Man City       
+96, Mahrez               ,7
 97, Walcott              , Everton        
-98, Milner               , Liverpool      
+98, Milner               ,3
 99, Iwobi                , Arsenal        
 100, Lössl                , Huddersfield   
 101, Noble                , West Ham       
 102, Mkhitaryan           , Arsenal        
-103, Tarkowski            , Burnley        
+103, Tarkowski            ,5
 104, Morrison             , Cardiff        
 105, Ecuele Manga         , Cardiff        
-106, Frello Filho         , Chelsea        
+106, Frello Filho         ,2
 107, Bamba                , Cardiff        
 108, Lascelles            , Newcastle      
-109, March                , Brighton       
+109, March                ,1
 110, Sessegnon            , Fulham         
 111, Ward-Prowse          , Southampton    
-112, Alli                 , Spurs          
+112, Alli                 ,8
 113, Coady                , Wolves         
 114, Schär                , Newcastle      
 115, Cathcart             , Watford        
 116, Holebas              , Watford        
-117, Gudmundsson          , Burnley        
+117, Gudmundsson          ,5
 118, Calvert-Lewin        , Everton        
 119, Maguire              , Leicester      
 120, Rice                 , West Ham       
 121, Ramsey               , Arsenal        
-122, Dunk                 , Brighton       
+122, Dunk                 ,1
 123, Schlupp              , Crystal Palace 
-124, Shaw                 , Man Utd        
+124, Shaw                 ,6
 125, Xhaka                , Arsenal        
 126, Ings                 , Southampton    
 127, Højbjerg             , Southampton    
@@ -130,39 +130,39 @@
 130, Bennett              , Wolves         
 131, Sakho                , Crystal Palace 
 132, Anício Caldeira Duar , Everton        
-133, Shaqiri              , Liverpool      
-134, Cork                 , Burnley        
+133, Shaqiri              ,3
+134, Cork                 ,5
 135, Hughes               , Watford        
 136, Diop                 , West Ham       
 137, Tomkins              , Crystal Palace 
 138, Rico                 , Fulham         
-139, Rose                 , Spurs          
+139, Rose                 ,8
 140, Hernández Balcázar   , West Ham       
 141, Cook                 , Bournemouth    
-142, Lindelöf             , Man Utd        
+142, Lindelöf             ,6
 143, Snodgrass            , West Ham       
 144, Gray                 , Leicester      
-145, Matip                , Liverpool      
-146, Stones               , Man City       
+145, Matip                ,3
+146, Stones               ,7
 147, Gray                 , Watford        
-148, Taylor               , Burnley        
+148, Taylor               ,5
 149, Hoilett              , Cardiff        
 150, Kolasinac            , Arsenal        
-151, Mee                  , Burnley        
+151, Mee                  ,5
 152, Guaita               , Crystal Palace 
 153, Mustafi              , Arsenal        
-154, Groß                 , Brighton       
+154, Groß                 ,1
 155, Paterson             , Cardiff        
 156, Reid                 , Cardiff        
-157, Barkley              , Chelsea        
-158, Loftus-Cheek         , Chelsea        
-159, Luiz Rosa            , Man City       
-160, de Jesus             , Man City       
+157, Barkley              ,2
+158, Loftus-Cheek         ,2
+159, Luiz Rosa            ,7
+160, de Jesus             ,7
 161, Capoue               , Watford        
 162, Torreira             , Arsenal        
 163, Gueye                , Everton        
-164, Lingard              , Man Utd        
-165, Sánchez              , Spurs          
+164, Lingard              ,6
+165, Sánchez              ,8
 166, Monreal              , Arsenal        
 167, Bennett              , Cardiff        
 168, Evans                , Leicester      
@@ -170,83 +170,83 @@
 170, Schindler            , Huddersfield   
 171, Mooy                 , Huddersfield   
 172, Morgan               , Leicester      
-173, Henderson            , Liverpool      
-174, Sissoko              , Spurs          
+173, Henderson            ,3
+174, Sissoko              ,8
 175, Lerma                , Bournemouth    
-176, McNeil               , Burnley        
+176, McNeil               ,5
 177, Schürrle             , Fulham         
 178, Babel                , Fulham         
 179, Armstrong            , Southampton    
-180, Knockaert            , Brighton       
-181, Hendrick             , Burnley        
-182, Young                , Man Utd        
+180, Knockaert            ,1
+181, Hendrick             ,5
+182, Young                ,6
 183, McCarthy             , Southampton    
-184, Pröpper              , Brighton       
+184, Pröpper              ,1
 185, Seri                 , Fulham         
 186, Cairney              , Fulham         
 187, Smith                , Bournemouth    
-188, Otamendi             , Man City       
-189, Mata                 , Man Utd        
-190, Hart                 , Burnley        
+188, Otamendi             ,7
+189, Mata                 ,6
+190, Hart                 ,5
 191, Pritchard            , Huddersfield   
 192, Mounie               , Huddersfield   
 193, Hayden               , Newcastle      
 194, Hennessey            , Crystal Palace 
 195, Kouyaté              , Crystal Palace 
 196, Jorgensen            , Huddersfield   
-197, Keita                , Liverpool      
+197, Keita                ,3
 198, Dummett              , Newcastle      
-199, Vertonghen           , Spurs          
-200, Lamela               , Spurs          
+199, Vertonghen           ,8
+200, Lamela               ,8
 201, Long                 , Southampton    
-202, Davies               , Spurs          
+202, Davies               ,8
 203, Femenía Far          , Watford        
-204, Stephens             , Brighton       
+204, Stephens             ,1
 205, Gunnarsson           , Cardiff        
-206, Tavares              , Liverpool      
+206, Tavares              ,3
 207, Papastathopoulos     , Arsenal        
-208, Kovacic              , Chelsea        
+208, Kovacic              ,2
 209, Tavares Gomes        , Everton        
 210, Begovic              , Bournemouth    
 211, Mendez-Laing         , Cardiff        
 212, Billing              , Huddersfield   
-213, Albrighton           , Leicester      
+213, Al1           , Leicester      
 214, Tielemans            , Leicester      
-215, Lovren               , Liverpool      
+215, Lovren               ,3
 216, Yedlin               , Newcastle      
 217, Koscielny            , Arsenal        
-218, Herrera              , Man Utd        
+218, Herrera              ,6
 219, Balbuena             , West Ham       
 220, Bellerín             , Arsenal        
 221, Meyer                , Crystal Palace 
 222, Chambers             , Fulham         
 223, Kongolo              , Huddersfield   
-224, Mendy                , Man City       
-225, De Bruyne            , Man City       
-226, Matic                , Man Utd        
-227, Heaton               , Burnley        
+224, Mendy                ,7
+225, De Bruyne            ,7
+226, Matic                ,6
+227, Heaton               ,5
 228, Iheanacho            , Leicester      
 229, Mendy                , Leicester      
-230, Kompany              , Man City       
+230, Kompany              ,7
 231, Mariappa             , Watford        
 232, Stanislas            , Bournemouth    
 233, Tosun                , Everton        
-234, Smalling             , Man Utd        
+234, Smalling             ,6
 235, Diamé                , Newcastle      
 236, Bertrand             , Southampton    
-237, Dier                 , Spurs          
+237, Dier                 ,8
 238, Zabaleta             , West Ham       
-239, Giroud               , Chelsea        
-240, Gomez                , Liverpool      
+239, Giroud               ,2
+240, Gomez                ,3
 241, Atsu                 , Newcastle      
 242, Romeu Vidal          , Southampton    
 243, Gosling              , Bournemouth    
 244, Hogg                 , Huddersfield   
 245, Valery               , Southampton    
-246, Higuaín              , Chelsea        
+246, Higuaín              ,2
 247, Manquillo            , Newcastle      
-248, Winks                , Spurs          
-249, Locadia              , Brighton       
+248, Winks                ,8
+249, Locadia              ,1
 250, Bryan                , Fulham         
 251, Soares               , Southampton    
 252, Costa                , Wolves         
@@ -260,8 +260,8 @@
 260, Durm                 , Huddersfield   
 261, Bednarek             , Southampton    
 262, Masuaku              , West Ham       
-263, Bong                 , Brighton       
-264, Vokes                , Burnley        
+263, Bong                 ,1
+264, Vokes                ,5
 265, Arter                , Cardiff        
 266, Batshuayi            , Crystal Palace 
 267, Ogbonna              , West Ham       
@@ -269,76 +269,76 @@
 269, Dendoncker           , Wolves         
 270, Guendouzi            , Arsenal        
 271, Vietto               , Fulham         
-272, Sánchez              , Man Utd        
+272, Sánchez              ,6
 273, Fernández            , Newcastle      
 274, Stephens             , Southampton    
 275, Gunn                 , Southampton    
 276, Saïss                , Wolves         
 277, Boruc                , Bournemouth    
-278, Saltor Grau          , Brighton       
-279, Morata               , Chelsea        
+278, Saltor Grau          ,1
+279, Morata               ,2
 280, Ayew                 , Crystal Palace 
-281, da Silva             , Man City       
+281, da Silva             ,7
 282, Austin               , Southampton    
-283, Montoya              , Brighton       
+283, Montoya              ,1
 284, Ralls                , Cardiff        
 285, Grant                , Huddersfield   
 286, Daniels              , Bournemouth    
 287, Odoi                 , Fulham         
-288, Zinchenko            , Man City       
+288, Zinchenko            ,7
 289, Yoshida              , Southampton    
 290, Traoré               , Wolves         
-291, Bissouma             , Brighton       
+291, Bissouma             ,1
 292, Peltier              , Cardiff        
 293, Barnes               , Leicester      
-294, Jones                , Man Utd        
+294, Jones                ,6
 295, Obiang               , West Ham       
 296, Christie             , Fulham         
 297, Clark                , Newcastle      
 298, Success Ajayi        , Watford        
-299, Lennon               , Burnley        
-300, Llorente             , Spurs          
+299, Lennon               ,5
+300, Llorente             ,8
 301, Francis              , Bournemouth    
-302, Rodrigues de Paula S , Man Utd        
-303, Fernandes da Silva J , Brighton       
+302, Rodrigues de Paula S ,6
+303, Fernandes da Silva J ,1
 304, Bacuna               , Huddersfield   
 305, Shelvey              , Newcastle      
-306, Andone               , Brighton       
+306, Andone               ,1
 307, Le Marchand          , Fulham         
 308, Mbenza               , Huddersfield   
-309, McTominay            , Man Utd        
+309, McTominay            ,6
 310, Ki                   , Newcastle      
 311, Fredericks           , West Ham       
 312, Zambo Anguissa       , Fulham         
 313, Sema                 , Watford        
 314, Gibbs-White          , Wolves         
 315, Surman               , Bournemouth    
-316, Kayal                , Brighton       
+316, Kayal                ,1
 317, Mina                 , Everton        
 318, Targett              , Southampton    
 319, Kabasele             , Watford        
 320, Lejeune              , Newcastle      
-321, Foyth                , Spurs          
+321, Foyth                ,8
 322, Maitland-Niles       , Arsenal        
 323, Clyne                , Bournemouth    
-324, Lowton               , Burnley        
+324, Lowton               ,5
 325, Lookman              , Everton        
 326, Depoitre             , Huddersfield   
-327, Sturridge            , Liverpool      
+327, Sturridge            ,3
 328, Cresswell            , West Ham       
 329, Ibe                  , Bournemouth    
-330, Jahanbakhsh          , Brighton       
-331, Bardsley             , Burnley        
+330, Jahanbakhsh          ,1
+331, Bardsley             ,5
 332, Zohore               , Cardiff        
 333, Benteke              , Crystal Palace 
 334, Pérez                , West Ham       
-335, Origi                , Liverpool      
-336, Izquierdo Mena       , Brighton       
+335, Origi                ,3
+336, Izquierdo Mena       ,1
 337, Lanzini              , West Ham       
 338, Niasse               , Cardiff        
 339, Mato Sanmartín       , Newcastle      
 340, Kachunga             , Huddersfield   
-341, Delph                , Man City       
+341, Delph                ,7
 342, Hoedt                , Southampton    
 343, Mousset              , Bournemouth    
 344, Schneiderlin         , Everton        
@@ -346,18 +346,18 @@
 346, Ghezzal              , Leicester      
 347, Almirón              , Newcastle      
 348, Elyounoussi          , Southampton    
-349, Walker-Peters        , Spurs          
+349, Walker-Peters        ,8
 350, Mepham               , Bournemouth    
-351, Dalot Teixeira       , Man Utd        
-352, Pereira              , Man Utd        
+351, Dalot Teixeira       ,6
+352, Pereira              ,6
 353, Yarmolenko           , West Ham       
 354, Kelly                , Crystal Palace 
 355, Davies               , Everton        
-356, Fellaini             , Man Utd        
+356, Fellaini             ,6
 357, Longstaff            , Newcastle      
 358, Masina               , Watford        
 359, Okazaki              , Leicester      
-360, Foden                , Man City       
+360, Foden                ,7
 361, Cleverley            , Watford        
 362, Diangana             , West Ham       
 363, Cech                 , Arsenal        
@@ -366,64 +366,64 @@
 366, Ayité                , Fulham         
 367, Stankovic            , Huddersfield   
 368, Muto                 , Newcastle      
-369, Aurier               , Spurs          
-370, Wanyama              , Spurs          
+369, Aurier               ,8
+370, Wanyama              ,8
 371, Silva Nascimento Vin , Wolves         
 372, Dann                 , Crystal Palace 
-373, Lallana              , Liverpool      
+373, Lallana              ,3
 374, Gabbiadini           , Southampton    
 375, Cook                 , Bournemouth    
 376, Ward                 , Cardiff        
-377, Christensen          , Chelsea        
-378, Palmieri dos Santos  , Chelsea        
+377, Christensen          ,2
+378, Palmieri dos Santos  ,2
 379, Jagielka             , Everton        
-380, Vydra                , Burnley        
-381, Brady                , Burnley        
+380, Vydra                ,5
+381, Brady                ,5
 382, Choudhury            , Leicester      
 383, Welbeck              , Arsenal        
 384, Kenny                , Everton        
 385, Mawson               , Fulham         
 386, Diakhaby             , Huddersfield   
-387, Hudson-Odoi          , Chelsea        
+387, Hudson-Odoi          ,2
 388, Bacuna               , Cardiff        
 389, McDonald             , Fulham         
-390, Valencia             , Man Utd        
+390, Valencia             ,6
 391, Quina                , Watford        
 392, Wilshere             , West Ham       
-393, Long                 , Burnley        
-394, Bailly               , Man Utd        
+393, Long                 ,5
+394, Bailly               ,6
 395, Murphy               , Newcastle      
 396, Solanke              , Bournemouth    
-397, Balogun              , Brighton       
-398, Button               , Brighton       
+397, Balogun              ,1
+398, Button               ,1
 399, Bettinelli           , Fulham         
 400, Puncheon             , Huddersfield   
 401, Amartey              , Leicester      
 402, Lichtsteiner         , Arsenal        
 403, Fosu-Mensah          , Fulham         
-404, Darmian              , Man Utd        
-405, Dembélé              , Spurs          
+404, Darmian              ,6
+405, Dembélé              ,8
 406, Nasri                , West Ham       
-407, Caballero            , Chelsea        
+407, Caballero            ,2
 408, Ward                 , Crystal Palace 
 409, Obafemi              , Southampton    
-410, Gazzaniga            , Spurs          
+410, Gazzaniga            ,8
 411, Sørloth              , Crystal Palace 
 412, Simpson              , Leicester      
-413, Skipp                , Spurs          
+413, Skipp                ,8
 414, Carroll              , West Ham       
 415, Johansen             , Fulham         
 416, Sims                 , Southampton    
 417, Elneny               , Arsenal        
 418, Nketiah              , Arsenal        
 419, Simpson              , Bournemouth    
-420, Defour               , Burnley        
+420, Defour               ,5
 421, van La Parra         , Huddersfield   
 422, Chalobah             , Watford        
 423, Bonatini             , Wolves         
 424, Travers              , Bournemouth    
 425, Cunninghamm          , Cardiff        
-426, Zappacosta           , Chelsea        
+426, Zappacosta           ,2
 427, Wickham              , Crystal Palace 
 428, Hamer                , Huddersfield   
 429, Smith                , Huddersfield   
@@ -432,20 +432,20 @@
 432, Davis                , Southampton    
 433, Sánchez              , West Ham       
 434, Rico                 , Bournemouth    
-435, Crouch               , Burnley        
+435, Crouch               ,5
 436, Agosto Ramírez       , Fulham         
 437, Nordtveit            , Fulham         
-438, Ward                 , Burnley        
+438, Ward                 ,5
 439, Baines               , Everton        
 440, Kebano               , Fulham         
 441, Ruddy                , Wolves         
-442, Gibson               , Burnley        
-443, Fàbregas             , Chelsea        
+442, Gibson               ,5
+443, Fàbregas             ,2
 444, Williams             , Huddersfield   
 445, Mings                , Bournemouth    
 446, Madine               , Cardiff        
 447, Holgate              , Everton        
-448, Vorm                 , Spurs          
+448, Vorm                 ,8
 449, Willock              , Arsenal        
 450, Jenkinson            , Arsenal        
 451, Suárez               , Arsenal        
@@ -453,32 +453,32 @@
 453, Sako                 , Crystal Palace 
 454, Cissé                , Fulham         
 455, Sobhi                , Huddersfield   
-456, Moreno               , Liverpool      
-457, Greenwood            , Man Utd        
+456, Moreno               ,3
+457, Greenwood            ,6
 458, Slattery             , Southampton    
 459, Gallagher            , Southampton    
-460, Nkoudou              , Spurs          
+460, Nkoudou              ,8
 461, Mavropanos           , Arsenal        
 462, Healey               , Cardiff        
 463, Fuchs                , Leicester      
 464, Perruchet Silva      , Leicester      
-465, Janssen              , Spurs          
+465, Janssen              ,8
 466, Britos               , Watford        
 467, Surridge             , Bournemouth    
 468, Richards             , Cardiff        
 469, Damour               , Cardiff        
-470, Cahill               , Chelsea        
-471, Moses                , Chelsea        
+470, Cahill               ,2
+471, Moses                ,2
 472, Elliott              , Fulham         
 473, Sabiri               , Huddersfield   
 474, Quaner               , Huddersfield   
 475, Coleman              , Huddersfield   
 476, Daly                 , Huddersfield   
 477, Rowe                 , Huddersfield   
-478, Oxlade-Chamberlain   , Liverpool      
-479, Rojo                 , Man Utd        
-480, Gomes                , Man Utd        
-481, Chong                , Man Utd        
+478, Oxlade-Chamberlain   ,3
+479, Rojo                 ,6
+480, Gomes                ,6
+481, Chong                ,6
 482, Forster              , Southampton    
 483, Navarro              , Watford        
 484, Johnson              , West Ham       
@@ -491,12 +491,12 @@
 491, Markovic             , Fulham         
 492, Duhaney              , Huddersfield   
 493, Diabaté              , Leicester      
-494, Camacho              , Liverpool      
-495, Garner               , Man Utd        
+494, Camacho              ,3
+495, Garner               ,6
 496, Barreca              , Newcastle      
 497, Johnson              , Southampton    
 498, Ramsay               , Southampton    
-499, Amos                 , Spurs          
+499, Amos                 ,8
 500, Prödl                , Watford        
 501, Okaka                , Watford        
 502, Wilmot               , Watford        
@@ -511,35 +511,35 @@
 511, Taylor               , Bournemouth    
 512, Ofoborh              , Bournemouth    
 513, Butcher              , Bournemouth    
-514, Suttner              , Brighton       
-515, Schelotto            , Brighton       
-516, Hemed                , Brighton       
-517, Baldock              , Brighton       
-518, Steele               , Brighton       
-519, Gyokeres             , Brighton       
-520, White                , Brighton       
-521, Sanders              , Brighton       
-522, Burn                 , Brighton       
-523, Molumby              , Brighton       
-524, Pope                 , Burnley        
-525, Walters              , Burnley        
-526, Wells                , Burnley        
-527, Lindegaard           , Burnley        
-528, Koiki                , Burnley        
-529, Benson               , Burnley        
-530, Driscoll-Glennon     , Burnley        
+514, Suttner              ,1
+515, Schelotto            ,1
+516, Hemed                ,1
+517, Baldock              ,1
+518, Steele               ,1
+519, Gyokeres             ,1
+520, White                ,1
+521, Sanders              ,1
+522, Burn                 ,1
+523, Molumby              ,1
+524, Pope                 ,5
+525, Walters              ,5
+526, Wells                ,5
+527, Lindegaard           ,5
+528, Koiki                ,5
+529, Benson               ,5
+530, Driscoll-Glennon     ,5
 531, Smithies             , Cardiff        
 532, Connolly             , Cardiff        
 533, Halford              , Cardiff        
 534, Pilkington           , Cardiff        
 535, Bogle                , Cardiff        
 536, Murphy               , Cardiff        
-537, Courtois             , Chelsea        
-538, Drinkwater           , Chelsea        
-539, Bakayoko             , Chelsea        
-540, Ampadu               , Chelsea        
-541, Abraham              , Chelsea        
-542, Guehi                , Chelsea        
+537, Courtois             ,2
+538, Drinkwater           ,2
+539, Bakayoko             ,2
+540, Ampadu               ,2
+541, Abraham              ,2
+542, Guehi                ,2
 543, Riedewald            , Crystal Palace 
 544, Jach                 , Crystal Palace 
 545, Kaikai               , Crystal Palace 
@@ -570,17 +570,17 @@
 570, Ward                 , Leicester      
 571, Benkovic             , Leicester      
 572, Knight               , Leicester      
-573, Mignolet             , Liverpool      
-574, Karius               , Liverpool      
-575, Klavan               , Liverpool      
-576, Jones                , Liverpool      
-577, Bravo                , Man City       
-578, Diaz                 , Man City       
-579, Muric                , Man City       
-580, Sandler              , Man City       
-581, Romero               , Man Utd        
-582, Blind                , Man Utd        
-583, Grant                , Man Utd        
+573, Mignolet             ,3
+574, Karius               ,3
+575, Klavan               ,3
+576, Jones                ,3
+577, Bravo                ,7
+578, Diaz                 ,7
+579, Muric                ,7
+580, Sandler              ,7
+581, Romero               ,6
+582, Blind                ,6
+583, Grant                ,6
 584, Elliot               , Newcastle      
 585, Darlow               , Newcastle      
 586, Mbemba               , Newcastle      
@@ -595,10 +595,10 @@
 595, Boufal               , Southampton    
 596, Carrillo             , Southampton    
 597, Jones                , Southampton    
-598, Whiteman             , Spurs          
-599, Eyoma                , Spurs          
-600, Sterling             , Spurs          
-601, Marsh                , Spurs          
+598, Whiteman             ,8
+599, Eyoma                ,8
+600, Sterling             ,8
+601, Marsh                ,8
 602, Gomes                , Watford        
 603, Dahlberg             , Watford        
 604, Kaboul               , Watford        
