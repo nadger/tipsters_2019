@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
  #answer = models.PositiveIntegerField(default=0)
 # Create your models here.
 class Teams(models.Model):
@@ -79,7 +81,12 @@ class entry_data(models.Model):
 	def __init__(self, arg):
 		super(entry_data, self).__init__()
 		self.arg = arg
-		
+
+class User_details(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	usr_team_name = models.CharField(max_length=100)
+	
+				
 
 #needs work
 class Results(models.Model):

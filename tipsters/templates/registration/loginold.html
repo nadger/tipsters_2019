@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{% load static %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Tipsters</title>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "/entries/signin.css" %}" rel="stylesheet">
+    
+  </head>
+
+  <body class="text-center">
+  
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+    </form>
+  </body>
+</html>
+
+    
+{% endblock %}
