@@ -1,6 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
+from django.contrib.auth import get_user_model
 
+class CustomUser(AbstractUser):
+	pass
  #answer = models.PositiveIntegerField(default=0)
 # Create your models here.
 class Teams(models.Model):
@@ -82,15 +86,12 @@ class entry_data(models.Model):
 		super(entry_data, self).__init__()
 		self.arg = arg
 
-class User_details(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	usr_team_name = models.CharField(max_length=100)
-	
 				
 
 #needs work
 class Results(models.Model):
-	userid = models.CharField(max_length=100)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=0)
+	season = models.PositiveIntegerField(default=0)
 	gw1score = models.PositiveIntegerField(default=0)
 	gw2score = models.PositiveIntegerField(default=0)
 	gw3score = models.PositiveIntegerField(default=0)

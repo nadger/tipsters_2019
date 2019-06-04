@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from entries.models import Fixtures, Question
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+#from django.conf import settings
+#User = settings.AUTH_USER_MODEL
 
 def loginold(request):
     #username = request.POST['username']
@@ -17,7 +20,7 @@ def loginold(request):
     #return render(request, 'entries/login.html')
 
 def menu(request):
-    #u = User.objects.get(username=user.username)
+    #u = User.objects.get(username=u)
     team_name = "xxx"
     context = {
         'team_name': team_name,
