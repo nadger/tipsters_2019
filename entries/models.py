@@ -4,9 +4,9 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 
 class CustomUser(AbstractUser):
+	user_teamname=models.CharField(max_length=100,null=True)
 	pass
- #answer = models.PositiveIntegerField(default=0)
-# Create your models here.
+
 class Teams(models.Model):
 	team_name = models.CharField(max_length=100)
 	def __str__(self):
