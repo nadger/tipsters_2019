@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dal',
+    'dal_select2',
+    'crispy_forms',
     'entries.apps.EntriesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,3 +126,5 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/entries/menu'
 
 AUTH_USER_MODEL = 'entries.CustomUser' 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

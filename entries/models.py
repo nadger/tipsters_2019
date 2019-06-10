@@ -4,8 +4,11 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 
 class CustomUser(AbstractUser):
-	user_teamname=models.CharField(max_length=100,null=True)
+	user_teams=models.CharField(max_length=100,null=True)
 	pass
+class usr_teams(models.Model):
+	team_name = models.CharField(max_length=100,null=True)
+	#team_usr_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
 class Teams(models.Model):
 	team_name = models.CharField(max_length=100)
@@ -44,6 +47,7 @@ class entry_data(models.Model):
 	entry_gw = models.PositiveIntegerField(default=0)
 	entry_season = models.PositiveIntegerField(default=2019)
 	team_id = models.PositiveIntegerField(default=2019)
+	fixture_id = models.ForeignKey('Fixtures', on_delete=models.CASCADE, default=0)
 	score_home_fix1 = models.PositiveIntegerField(default=0)
 	score_home_fix2 = models.PositiveIntegerField(default=0)
 	score_home_fix3 = models.PositiveIntegerField(default=0)
@@ -76,10 +80,10 @@ class entry_data(models.Model):
 	entry_q8 = models.CharField(max_length=5)
 	entry_q9 = models.CharField(max_length=5)
 	entry_q10 = models.CharField(max_length=5)
-	entry_player1 = models.CharField(max_length=20)
-	entry_player2 = models.CharField(max_length=20)
-	entry_player3 = models.CharField(max_length=20)
-	entry_player4 = models.CharField(max_length=20)
+	entry_player1 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_1")
+	entry_player2 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_2")
+	entry_player3 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_3")
+	entry_player4 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_4")
 
 	"""docstring for entry_data"""
 	def __init__(self, arg):
