@@ -2,7 +2,7 @@
 
 {% block page_content %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -130,22 +130,30 @@
 
   <form>
   <div class="form-group">
-    <label for="formGroupExampleInput">4 Points</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Player Name/Team">
+    <label for="id_player_1">4 Points</label> 
+    <select name="player_1" class="form-control" required id="id_player_1" data-autocomplete-light-language="en" data-autocomplete-light-url="/entries/player-autocomplete/" data-autocomplete-light-function="select2">
+    <option value="" selected>---------</option>
+    </select>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">3 points</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+    <label for="id_player_1">3 Points</label> 
+    <select name="player_1" class="form-control" required id="id_player_1" data-autocomplete-light-language="en" data-autocomplete-light-url="/entries/player-autocomplete/" data-autocomplete-light-function="select2">
+    <option value="" selected>---------</option>
+    </select>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">2 points</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+    <label for="id_player_1">2 Points</label> 
+    <select name="player_1" class="form-control" required id="id_player_1" data-autocomplete-light-language="en" data-autocomplete-light-url="/entries/player-autocomplete/" data-autocomplete-light-function="select2">
+    <option value="" selected>---------</option>
+    </select>
   </div>
   <div class="form-group">
-    <label for="formGroupExampleInput2">1 points</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Player Name/Team">
+    <label for="id_player_1">1 Points</label> 
+    <select name="player_1" class="form-control" required id="id_player_1" data-autocomplete-light-language="en" data-autocomplete-light-url="/entries/player-autocomplete/" data-autocomplete-light-function="select2">
+    <option value="" selected>---------</option>
+    </select>
   </div>
-
+<p></p>
 
 </form>
 
@@ -164,6 +172,18 @@
 </div>
 </body>
 </html>
+
+<link href="/static/admin/css/vendor/select2/select2.css" type="text/css" media="screen" rel="stylesheet">
+<link href="/static/admin/css/autocomplete.css" type="text/css" media="screen" rel="stylesheet">
+<link href="/static/autocomplete_light/select2.css" type="text/css" media="screen" rel="stylesheet">
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/select2/select2.full.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/select2/i18n/en.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/autocomplete.init.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/forward.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/select2.js"></script>
+<script type="text/javascript" src="/static/autocomplete_light/jquery.post-setup.js"></script>
 
 
 {% endblock %}

@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import TemplateView 
+from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm, formset_factory
-from entries.models import Fixtures, Question, Players, entry_data
-from django.contrib.auth import authenticate, login
+from entries.models import Fixtures, Question, Players, entry_data, configdata
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from dal import autocomplete
-from entries.forms import entryform
+from entries.forms import entryform, gwadmin
 
 class PlayerAutocomplete(autocomplete.Select2QuerySetView):
     def get_result_label(self, item):
@@ -24,7 +26,7 @@ class PlayerAutocomplete(autocomplete.Select2QuerySetView):
         return qs
 
     
-
+@login_required
 def loginold(request):
     #username = request.POST['username']
     #password = request.POST['password']
@@ -38,6 +40,7 @@ def loginold(request):
      #   return render(request, 'entries/menu.html')
     #return render(request, 'entries/login.html')
 
+@login_required
 def menu(request):
     #u = User.objects.get(username=u)
     team_name = "xxx"
@@ -47,13 +50,24 @@ def menu(request):
 
     return render(request, 'entries/menu.html', context)
 
+@login_required
+def admin(request):
+    team_name = "xxx"
+    context = {
+        'team_name': team_name,
+    }
+
+    return render(request, 'entries/admin.html', context)
+
+@login_required
 def league(request):
 	return render(request, 'entries/menu.html')
 
+@login_required
 def gwresult(request):
-	return render(request, 'entries/results.html')
+	return render(request, 'entries/results.html')     
 
-
+@login_required
 def index(request):
     goalrange = range(10)
     totalgoals = range(50)
@@ -97,5 +111,39 @@ class entryview(TemplateView):
             }
         return render(request, self.template_name, context)
 
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
+
+
+class GWList(ListView):
+    model = configdata  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
+
+class GWDetail(DetailView):
+    model = configdata  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
+
+class GWCreate(CreateView):
+    model = configdata  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
+
+class GWUpdate(UpdateView):
+    model = configdata  
+    form_class = gwadmin
+    #fields = ['gameweek', 'season', 'gw_deadline', 'gw_active', 'gw_closed']
+    success_url = '/entries/admin/gwview'
     
-   
+
+class GWDelete(DeleteView):
+    model = configdata  
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context 
