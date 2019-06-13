@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm, formset_factory
-from django.forms.models import inlineformset_factory
+from django.forms.models import inlineformset_factory, modelformset_factory
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Fixtures, Players, entry_data, configdata
 from crispy_forms.helper import FormHelper
@@ -23,9 +23,16 @@ class gwadmin(forms.ModelForm):
 		model = configdata
 		fields = ('gameweek', 'season', 'gw_deadline', 'gw_active', 'gw_closed')
 		widgets = {
-            'gw_deadline': forms.widgets.DateTimeInput(),
+            'gw_deadline': forms.DateTimeInput(),
         }
-		
+
+
+class score_entry(forms.ModelForm):
+	#score_home = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
+	#score_away = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
+	class Meta:
+		model = entry_data
+		exclude = ()
 
 class entryform(forms.Form):
 	score_h1_f1 = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)

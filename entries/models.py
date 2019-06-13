@@ -14,6 +14,8 @@ class configdata(models.Model):
 	gw_deadline = models.DateTimeField(default=datetime.now)
 	gw_active = models.BooleanField(default=False)
 	gw_closed = models.BooleanField(default=False)
+	def __str__(self):
+		return '{} / {}'.format(self.gameweek, self.season)
 	class Meta:
 		verbose_name = 'Game Week Config'
 		verbose_name_plural = 'Game Week Config'
@@ -21,6 +23,8 @@ class configdata(models.Model):
 class usr_teams(models.Model):
 	team_name = models.CharField(max_length=100,null=True)
 	team_user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="teams", default=0)
+	def __str__(self):
+		return self.team_name
 	class Meta:
 		verbose_name = 'user team'
 		verbose_name_plural = 'user teams'
@@ -37,6 +41,8 @@ class Fixtures(models.Model):
 	home_team = models.ForeignKey(Teams, models.CASCADE, related_name="games_as_team1", null=True)
 	away_team = models.ForeignKey(Teams, models.CASCADE, related_name="games_as_team2", null=True)
 	game_week = models.ForeignKey(configdata, models.CASCADE, related_name="Fixture_Game_Week")
+	def __str__(self):
+		return '{} v {}'.format(self.home_team, self.away_team)
 	class Meta:
 		verbose_name = 'fixture'
 		verbose_name_plural = 'fixtures'
@@ -44,6 +50,9 @@ class Fixtures(models.Model):
 class Question(models.Model):
     question_text = models.CharField(max_length=200, default="test")
     game_week = models.ForeignKey(configdata, models.CASCADE, related_name="Question_Game_Week")
+    def __str__(self):
+    	return self.question_text
+
 
 class Answer(models.Model):
 	question = models.ForeignKey(Question, models.CASCADE, related_name="Question_Number")
@@ -62,6 +71,8 @@ class Answer(models.Model):
 class Players(models.Model):
 	player_name = models.CharField(max_length=100)
 	player_team = models.ForeignKey(Teams, on_delete=models.CASCADE)
+	def __str__(self):
+		return self.player_name
 	class Meta:
 		verbose_name = 'player'
 		verbose_name_plural = 'players'
@@ -69,18 +80,19 @@ class Players(models.Model):
 
 class entry_data(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="Entry_Game_Week")
-	team_id = models.ForeignKey(configdata, models.CASCADE, related_name="Entry_Team")
+	team_id = models.ForeignKey(usr_teams, models.CASCADE, related_name="Entry_Team")
+	fixture_id = models.ForeignKey(Fixtures, models.CASCADE, related_name="Entry_Team", default=0)
 	score_home = models.PositiveIntegerField(default=0)
 	score_away = models.PositiveIntegerField(default=0)
 	
 	
 class Total_Goal_Entry(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="TG_Game_Week")
-	team_id = models.ForeignKey(configdata, models.CASCADE, related_name="TG_Team")
+	team_id = models.ForeignKey(usr_teams, models.CASCADE, related_name="TG_Team")
 	score_tg = models.PositiveIntegerField(default=0)
 
 class entry_q_answers(models.Model):
-	team_id = models.ForeignKey(configdata, models.CASCADE, related_name="qanwsers_team")
+	team_id = models.ForeignKey(usr_teams, models.CASCADE, related_name="qanwsers_team")
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="qanwsers_Game_Week")
 	question_id = models.ForeignKey(Question, models.CASCADE, related_name="qanwsers_question_id")
 	TRUE = 'TRUE'
@@ -98,7 +110,7 @@ class entry_q_answers(models.Model):
 
 class entry_scorers(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="scorers_gw_entry")
-	team_id = models.ForeignKey(configdata, models.CASCADE, related_name="scorers_team_entry")
+	team_id = models.ForeignKey(usr_teams, models.CASCADE, related_name="scorers_team_entry")
 	entry_player1 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_1")
 	entry_player2 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_2")
 	entry_player3 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_3")

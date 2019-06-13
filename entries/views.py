@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.forms import ModelForm, formset_factory
+from django.forms import ModelForm, formset_factory, modelformset_factory, inlineformset_factory
 from entries.models import Fixtures, Question, Players, entry_data, configdata
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from dal import autocomplete
-from entries.forms import entryform, gwadmin
+from entries.forms import entryform, gwadmin, score_entry
 
 class PlayerAutocomplete(autocomplete.Select2QuerySetView):
     def get_result_label(self, item):
@@ -26,20 +26,6 @@ class PlayerAutocomplete(autocomplete.Select2QuerySetView):
         return qs
 
     
-@login_required
-def loginold(request):
-    #username = request.POST['username']
-    #password = request.POST['password']
-    #user = authenticate(request, username=username, password=password)
-    #if user is not None:
-    #    login(request, user)
-        # Redirect to a success page.
-    return render(request, 'entries/login.html')
-    #else:
-        # Return an 'invalid login' error message.
-     #   return render(request, 'entries/menu.html')
-    #return render(request, 'entries/login.html')
-
 @login_required
 def menu(request):
     #u = User.objects.get(username=u)
@@ -86,17 +72,25 @@ class entryview(TemplateView):
     template_name = 'entries/entries_form_df.html'
     #goalrange = range(10)
     #totalgoals = range(50)
-    #fixtures = Fixtures.objects.all()
+    
     #questions = Question.objects.all()
-
+    
     
     def get(self, request):
         #game_week = Fixtures.objects.filter(game_week='1')
-        form = entryform()
+        fixtures = Fixtures.objects.get(game_week__gameweek='1')
+        #fixtures = Fixtures.objects.all()
+        FixtureFormSet = inlineformset_factory(Fixtures, entry_data, form = score_entry)
+        formset = FixtureFormSet(instance = fixtures)
+        #form = score_entry()
         #ffs = formset_factory(entryform)
         #formset = ffs
         #form = ggwf
-        return render(request, self.template_name, {'form': form})
+        context = {
+            'fixtures': fixtures,
+            'formset': formset
+            }
+        return render(request, self.template_name, {'formset': formset})
 
     def post(self, request):
         form = entryform(request.POST) 

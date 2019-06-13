@@ -33,9 +33,12 @@
     <h2>Game Week 40</h2>
     <p class="lead">Sunday May 9th 2019</p>
   </div>
+  <p>Game Week: {{formset.gameweek}}</p>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    <table>
+        {{ formset }}
+    </table>
     <button class="btn btn-primary btn-lg btn-block" type="submit">Save Entry</button>
   </form>
   <footer class="my-5 pt-5 text-muted text-center text-small">
