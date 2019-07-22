@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    
+
     <title>Tipsters - Entry Form</title>
 
   </head>
@@ -37,7 +37,12 @@
   <form method="post">
     {% csrf_token %}
     <table>
-        {{ formset }}
+        {{ context.formset }}
+
+    </table>
+    <p> Total Goals </p>
+    <table>
+      {{ context.form }}
     </table>
     <button class="btn btn-primary btn-lg btn-block" type="submit">Save Entry</button>
   </form>
@@ -50,7 +55,7 @@
     </ul>
   </footer>
   </body>
-  
- </html> 
+
+ </html>
 {{ form.media }}
 {% endblock %}

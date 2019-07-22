@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
     path('entry', views.index, name='index'),
     path('entry2', login_required(views.entryview.as_view()), name='entry2'),
+    path('entry/<int:pk>', login_required(views.entryview.as_view()), name='entry'),
     path('login', views.login, name='login'),
     path('menu', views.menu, name='menu'),
     path('admin', views.admin, name='admin'),
@@ -21,5 +22,3 @@ urlpatterns = [
     re_path(r'^player-autocomplete/$', login_required(PlayerAutocomplete.as_view()), name='player-autocomplete'),
 
 ]
-
-

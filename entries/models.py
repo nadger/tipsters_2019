@@ -2,10 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from datetime import datetime 
+from datetime import datetime
 
 class CustomUser(AbstractUser):
 	comments=models.CharField(max_length=100,null=True)
+	teamname=models.CharField(max_length=100,null=True)
 	pass
 
 class configdata(models.Model):
@@ -67,7 +68,7 @@ class Answer(models.Model):
         choices=Q_CHOICES,
         default=TRUE,
     )
-	
+
 class Players(models.Model):
 	player_name = models.CharField(max_length=100)
 	player_team = models.ForeignKey(Teams, on_delete=models.CASCADE)
@@ -84,8 +85,8 @@ class entry_data(models.Model):
 	fixture_id = models.ForeignKey(Fixtures, models.CASCADE, related_name="Entry_Team", default=0)
 	score_home = models.PositiveIntegerField(default=0)
 	score_away = models.PositiveIntegerField(default=0)
-	
-	
+
+
 class Total_Goal_Entry(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="TG_Game_Week")
 	team_id = models.ForeignKey(usr_teams, models.CASCADE, related_name="TG_Team")
@@ -106,7 +107,7 @@ class entry_q_answers(models.Model):
         choices=Q_CHOICES,
         default=TRUE,
     )
-	
+
 
 class entry_scorers(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="scorers_gw_entry")
@@ -116,7 +117,7 @@ class entry_scorers(models.Model):
 	entry_player3 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_3")
 	entry_player4 = models.ForeignKey('Players', on_delete=models.CASCADE, default=0, related_name="player_score_4")
 
-				
+
 
 #needs work
 class Results(models.Model):
@@ -161,5 +162,3 @@ class Results(models.Model):
 	gw38score = models.PositiveIntegerField(default=0)
 	gw39score = models.PositiveIntegerField(default=0)
 	gw40score = models.PositiveIntegerField(default=0)
-	
-		

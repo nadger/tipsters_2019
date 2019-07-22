@@ -3,12 +3,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm, formset_factory, modelformset_factory, inlineformset_factory
-from entries.models import Fixtures, Question, Players, entry_data, configdata
+from entries.models import Fixtures, Question, Players, entry_data, configdata, usr_teams
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from dal import autocomplete
-from entries.forms import entryform, gwadmin, score_entry
+from entries.forms import entryform, gwadmin, score_entry, totalgoals_form
 
 class PlayerAutocomplete(autocomplete.Select2QuerySetView):
     def get_result_label(self, item):
@@ -25,13 +25,15 @@ class PlayerAutocomplete(autocomplete.Select2QuerySetView):
 
         return qs
 
-    
+
 @login_required
 def menu(request):
     #u = User.objects.get(username=u)
+    active_gw = configdata.objects.filter(gw_active=1)
     team_name = "xxx"
     context = {
         'team_name': team_name,
+        'active_gw': active_gw
     }
 
     return render(request, 'entries/menu.html', context)
@@ -51,7 +53,7 @@ def league(request):
 
 @login_required
 def gwresult(request):
-	return render(request, 'entries/results.html')     
+	return render(request, 'entries/results.html')
 
 @login_required
 def index(request):
@@ -65,20 +67,22 @@ def index(request):
         'goalrange': goalrange,
         'totalgoals': totalgoals
     }
-    
+
     return render(request, 'entries/entries_form.html', context)
 
 class entryview(TemplateView):
     template_name = 'entries/entries_form_df.html'
     #goalrange = range(10)
     #totalgoals = range(50)
-    
+
     #questions = Question.objects.all()
-    
-    
-    def get(self, request):
+
+
+    def get(self, request, pk):
         #game_week = Fixtures.objects.filter(game_week='1')
-        fixtures = Fixtures.objects.get(game_week__gameweek='1')
+        current_gw = pk
+        fixtures = Fixtures.objects.get(game_week__pk = current_gw)
+
         #fixtures = Fixtures.objects.all()
         FixtureFormSet = inlineformset_factory(Fixtures, entry_data, form = score_entry)
         formset = FixtureFormSet(instance = fixtures)
@@ -86,24 +90,24 @@ class entryview(TemplateView):
         #ffs = formset_factory(entryform)
         #formset = ffs
         #form = ggwf
+        form = totalgoals_form()
         context = {
             'fixtures': fixtures,
+            'form': form,
             'formset': formset
             }
-        return render(request, self.template_name, {'formset': formset})
+        return render(request, self.template_name, {'context': context})
 
     def post(self, request):
-        form = entryform(request.POST) 
+        form = totalgoals_form(request.POST)
         if form.is_valid():
-            text = form.cleaned_data['post']
-            context = {
-            'fixtures': fixtures,
-            'questions': questions,
-            'goalrange': goalrange,
-            'totalgoals': totalgoals,
-            'form': form
-            }
-        return render(request, self.template_name, context)
+            post = form.save(commit=False)
+
+            post.gameweek = 1
+            post.pk = 2
+            post.save()
+
+        return render(request, self.template_name)
 
 
 def logout_view(request):
@@ -112,32 +116,32 @@ def logout_view(request):
 
 
 class GWList(ListView):
-    model = configdata  
+    model = configdata
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        return context 
+        return context
 
 class GWDetail(DetailView):
-    model = configdata  
+    model = configdata
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        return context 
+        return context
 
 class GWCreate(CreateView):
-    model = configdata  
+    model = configdata
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        return context 
+        return context
 
 class GWUpdate(UpdateView):
-    model = configdata  
+    model = configdata
     form_class = gwadmin
     #fields = ['gameweek', 'season', 'gw_deadline', 'gw_active', 'gw_closed']
     success_url = '/entries/admin/gwview'
-    
+
 
 class GWDelete(DeleteView):
-    model = configdata  
+    model = configdata
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        return context 
+        return context

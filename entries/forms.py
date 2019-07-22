@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm, formset_factory
 from django.forms.models import inlineformset_factory, modelformset_factory
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser, Fixtures, Players, entry_data, configdata
+from .models import CustomUser, Fixtures, Players, entry_data, configdata, Total_Goal_Entry
 from crispy_forms.helper import FormHelper
 from dal import autocomplete
 
@@ -34,6 +34,14 @@ class score_entry(forms.ModelForm):
 		model = entry_data
 		exclude = ()
 
+class totalgoals_form(forms.ModelForm):
+    class Meta:
+        model = Total_Goal_Entry
+        exclude = ()
+        #fields = ('score_tg',)
+
+
+
 class entryform(forms.Form):
 	score_h1_f1 = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
 	score_a1_f1 = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
@@ -57,6 +65,3 @@ class entryform(forms.Form):
 	#class Meta:
 	#	model = entry_data
 	#	fields = ('__all__')
- 
-
-
