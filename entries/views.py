@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.forms import ModelForm, formset_factory, modelformset_factory, inlineformset_factory
-from entries.models import Fixtures, Question, Players, entry_data, configdata, usr_teams
+from entries.models import Fixtures, Question, Players, entry_data_new, configdata, usr_teams
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -81,11 +81,13 @@ class entryview(TemplateView):
     def get(self, request, pk):
         #game_week = Fixtures.objects.filter(game_week='1')
         current_gw = pk
-        fixtures = Fixtures.objects.get(game_week__pk = current_gw)
+        fixtures = entry_data_new.objects.get(team_id__pk = 2)
+        #Check if there is an entry
 
         #fixtures = Fixtures.objects.all()
-        FixtureFormSet = inlineformset_factory(Fixtures, entry_data, form = score_entry)
-        formset = FixtureFormSet(instance = fixtures)
+        FixtureFormSet = score_entry(instance = fixtures)
+        #formset = FixtureFormSet(instance = fixtures)
+        formset = FixtureFormSet
         #form = score_entry()
         #ffs = formset_factory(entryform)
         #formset = ffs
