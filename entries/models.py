@@ -42,6 +42,7 @@ class Fixtures(models.Model):
 	home_team = models.ForeignKey(Teams, models.CASCADE, related_name="games_as_team1", null=True)
 	away_team = models.ForeignKey(Teams, models.CASCADE, related_name="games_as_team2", null=True)
 	game_week = models.ForeignKey(configdata, models.CASCADE, related_name="Fixture_Game_Week")
+	fix_weekid = models.PositiveIntegerField(default=0)
 	def __str__(self):
 		return '{} v {}'.format(self.home_team, self.away_team)
 	class Meta:

@@ -80,33 +80,36 @@ class entryview(TemplateView):
 
     def get(self, request, pk):
         #game_week = Fixtures.objects.filter(game_week='1')
+        current_user = request.user
+        current_usrid = current_user.id
         current_gw = pk
-        fixtures = entry_data_new.objects.get(team_id__pk = 2)
-        #Check if there is an entry
-
-        #fixtures = Fixtures.objects.all()
-        FixtureFormSet = score_entry(instance = fixtures)
-        #formset = FixtureFormSet(instance = fixtures)
+        if entry_data_new.objects.filter(team_id__pk = current_usrid, entry_gw = pk).exists():
+            fixtures = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
+            FixtureFormSet = score_entry(instance = fixtures)
+        else:
+            FixtureFormSet = score_entry
+            fixtures = 1
         formset = FixtureFormSet
-        #form = score_entry()
-        #ffs = formset_factory(entryform)
-        #formset = ffs
-        #form = ggwf
-        form = totalgoals_form()
+        #form = totalgoals_form()
         context = {
             'fixtures': fixtures,
-            'form': form,
             'formset': formset
             }
         return render(request, self.template_name, {'context': context})
 
-    def post(self, request):
-        form = totalgoals_form(request.POST)
+    def post(self, request, pk):
+        current_user = request.user
+        current_usrid = current_user.id
+
+        if entry_data_new.objects.filter(team_id__pk = current_usrid, entry_gw = pk).exists():
+            update_ins = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
+            form = score_entry(request.POST, instance = update_ins)
+        else:
+            form = score_entry(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-
-            post.gameweek = 1
-            post.pk = 2
+            post.pk = pk
+            post.pk = current_usrid
             post.save()
 
         return render(request, self.template_name)
