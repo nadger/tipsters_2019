@@ -10,6 +10,7 @@ urlpatterns = [
     path('entry/<int:pk>', login_required(views.entryview.as_view()), name='entry'),
     path('login', views.login, name='login'),
     path('menu', views.menu, name='menu'),
+    path('error', views.menu, name='error'),
     path('admin', views.admin, name='admin'),
     path('league', views.league, name='league'),
     path('gwresult', views.gwresult, name='league'),

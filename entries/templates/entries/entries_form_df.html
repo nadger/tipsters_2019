@@ -33,13 +33,60 @@
     <h2>Game Week 40</h2>
     <p class="lead">Sunday May 9th 2019</p>
   </div>
-  <p>Game Week: {{formset.gameweek}}</p>
-  <form method="post">
-    {% csrf_token %}
-    <table>
-        {{ context.formset }}
+  <div class="row">
+    <div class="col-3 text-center">
+      <h4>Home</h4>
+    </div>
+    <div class="col-3 text-center">
+      Score
+    </div>
+    <div class="col-3 text-center">
+      Score
+    </div>
+    <div class="col-3 text-center">
+      <h4>Away</h4>
+    </div>
+  </div>
 
-    </table>
+
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ context.form.non_field_errors }}
+
+
+     <div class="row">
+      <div class="col-3 text-center">
+          <h5>{{ context.gw_fix.1.home_team }}</h5>
+        </div>
+        <div class="col-3 text-center">
+          <div>
+        {{ context.form.Score_home_fid1.errors }}
+        {{ context.form.Score_home_fid1.label_tag }}
+        {{ context.form.Score_home_fid1 }}
+        </div>
+        </div>
+        <div class="col-3 text-center">
+        </div>
+        <div class="col-3 text-center">
+          <h5>{{ context.gw_fix.1.away_team }}</h5>
+        </div>
+    </div>
+
+  <!--
+
+  {% for field in context.formset %}
+    <div class="fieldWrapper">
+        {{ context.formset.field.errors }}
+        {{ context.formset.field.label_tag }} {{ context.formset.field }}
+        {% if context.formset.field.help_text %}
+        <p class="help">{{ context.formset.field.help_text|safe }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+-->
+
     <p> Total Goals </p>
     <!--<table>
       {{ context.form }}
@@ -57,5 +104,5 @@
   </body>
 
  </html>
-{{ form.media }}
+
 {% endblock %}

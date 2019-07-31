@@ -32,7 +32,7 @@ class score_entry(forms.ModelForm):
 	#score_away = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
 	class Meta:
 		model = entry_data_new
-		exclude = ()
+		exclude = ('entry_gw', 'team_id')
 
 class totalgoals_form(forms.ModelForm):
     class Meta:

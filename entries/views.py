@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -48,6 +48,14 @@ def admin(request):
     return render(request, 'entries/admin.html', context)
 
 @login_required
+def error(request):
+    context = {
+        'error': error,
+    }
+
+    return render(request, 'entries/error.html', context)
+
+@login_required
 def league(request):
 	return render(request, 'entries/menu.html')
 
@@ -83,24 +91,38 @@ class entryview(TemplateView):
         current_user = request.user
         current_usrid = current_user.id
         current_gw = pk
+        gwdata = get_object_or_404(configdata, id = current_gw)
+        if gwdata.gw_active == False:
+            return render(request, 'entries/error.html')
+        gw_fix = Fixtures.objects.filter(game_week__pk = current_gw)
         if entry_data_new.objects.filter(team_id__pk = current_usrid, entry_gw = pk).exists():
-            fixtures = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
-            FixtureFormSet = score_entry(instance = fixtures)
+            entry_data = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
+            EntryFormSet = score_entry(instance = entry_data)
         else:
-            FixtureFormSet = score_entry
-            fixtures = 1
-        formset = FixtureFormSet
+                EntryFormSet = score_entry(initial={
+                    'fixture_id1': gw_fix[0].pk,
+                    'fixture_id2': gw_fix[1].pk,
+                    'fixture_id3': gw_fix[2].pk,
+                    'fixture_id4': gw_fix[3].pk,
+                    'fixture_id5': gw_fix[4].pk,
+                    'fixture_id6': gw_fix[5].pk,
+                    'fixture_id7': gw_fix[6].pk,
+                    'fixture_id8': gw_fix[7].pk,
+                    'fixture_id9': gw_fix[8].pk,
+                    'fixture_id10': gw_fix[9].pk,
+                    })
+        form = EntryFormSet
         #form = totalgoals_form()
         context = {
-            'fixtures': fixtures,
-            'formset': formset
+            'gw_fix': gw_fix,
+            'form': form
             }
         return render(request, self.template_name, {'context': context})
 
     def post(self, request, pk):
         current_user = request.user
         current_usrid = current_user.id
-
+        gw_fix = Fixtures.object.filter(game_week = pk)
         if entry_data_new.objects.filter(team_id__pk = current_usrid, entry_gw = pk).exists():
             update_ins = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
             form = score_entry(request.POST, instance = update_ins)
