@@ -48,51 +48,10 @@
     </div>
   </div>
 
+  {% load crispy_forms_tags %}
+  {% crispy context.form %}
 
 
-  <form method="post" novalidate>
-    {% csrf_token %}
-    {{ context.form.non_field_errors }}
-
-
-     <div class="row">
-      <div class="col-3 text-center">
-          <h5>{{ context.gw_fix.1.home_team }}</h5>
-        </div>
-        <div class="col-3 text-center">
-          <div>
-        {{ context.form.Score_home_fid1.errors }}
-        {{ context.form.Score_home_fid1.label_tag }}
-        {{ context.form.Score_home_fid1 }}
-        </div>
-        </div>
-        <div class="col-3 text-center">
-        </div>
-        <div class="col-3 text-center">
-          <h5>{{ context.gw_fix.1.away_team }}</h5>
-        </div>
-    </div>
-
-  <!--
-
-  {% for field in context.formset %}
-    <div class="fieldWrapper">
-        {{ context.formset.field.errors }}
-        {{ context.formset.field.label_tag }} {{ context.formset.field }}
-        {% if context.formset.field.help_text %}
-        <p class="help">{{ context.formset.field.help_text|safe }}</p>
-        {% endif %}
-    </div>
-{% endfor %}
-
--->
-
-    <p> Total Goals </p>
-    <!--<table>
-      {{ context.form }}
-    </table> -->
-    <button class="btn btn-primary btn-lg btn-block" type="submit">Save Entry</button>
-  </form>
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2019 K.H.S.S.C</p>
     <ul class="list-inline">

@@ -4,6 +4,7 @@ from django.forms.models import inlineformset_factory, modelformset_factory
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Fixtures, Players, entry_data_new, configdata, Total_Goal_Entry
 from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Div, Field
 from dal import autocomplete
 
 class CustomUserCreationForm(UserCreationForm):
@@ -30,9 +31,162 @@ class gwadmin(forms.ModelForm):
 class score_entry(forms.ModelForm):
 	#score_home = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
 	#score_away = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
-	class Meta:
-		model = entry_data_new
-		exclude = ('entry_gw', 'team_id')
+
+    def __init__(self, *args, **kwargs):
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Fieldset(
+                '',
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.0.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid1',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid1',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.0.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.1.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid2',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid2',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.1.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.2.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid3',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid3',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.2.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.3.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid4',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid4',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.3.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.4.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid5',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid5',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.4.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.5.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid6',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid6',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.5.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.6.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid7',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid7',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.6.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.7.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid8',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid8',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.7.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.8.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid9',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid9',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.8.away_team }} </b>  </div> </div>"""),
+
+                HTML(""" <div class="row"><div class="col-3 text-center"> <b> {{ context.gw_fix.9.home_team }} </b> </div> """),
+                    Div(
+                        'score_home_fid10',
+                    css_class = 'col-3 text-center'
+                    ),
+                    Div(
+                        'score_away_fid10',
+                    css_class = 'col-3 text-center'
+                    ),
+                HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.9.away_team }} </b>  </div> </div>"""),
+                'fixture_id1',
+                'fixture_id2',
+                'fixture_id3',
+                'fixture_id4',
+                'fixture_id5',
+                'fixture_id6',
+                'fixture_id7',
+                'fixture_id8',
+                'fixture_id9',
+                'fixture_id10',
+            ),
+            ButtonHolder(
+                Submit('submit', 'Submit', css_class='btn btn-primary btn-lg btn-block')
+            )
+        )
+        super(score_entry, self).__init__(*args, **kwargs)
+        self.fields['score_home_fid1'].label = ""
+        self.fields['score_home_fid2'].label = ""
+        self.fields['score_home_fid3'].label = ""
+        self.fields['score_home_fid4'].label = ""
+        self.fields['score_home_fid5'].label = ""
+        self.fields['score_home_fid6'].label = ""
+        self.fields['score_home_fid7'].label = ""
+        self.fields['score_home_fid8'].label = ""
+        self.fields['score_home_fid9'].label = ""
+        self.fields['score_home_fid10'].label = ""
+        self.fields['score_away_fid1'].label = ""
+        self.fields['score_away_fid2'].label = ""
+        self.fields['score_away_fid3'].label = ""
+        self.fields['score_away_fid4'].label = ""
+        self.fields['score_away_fid5'].label = ""
+        self.fields['score_away_fid6'].label = ""
+        self.fields['score_away_fid7'].label = ""
+        self.fields['score_away_fid8'].label = ""
+        self.fields['score_away_fid9'].label = ""
+        self.fields['score_away_fid10'].label = ""
+
+    class Meta:
+    	model = entry_data_new
+    	exclude = ('entry_gw', 'team_id')
+
 
 class totalgoals_form(forms.ModelForm):
     class Meta:

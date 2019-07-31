@@ -122,7 +122,7 @@ class entryview(TemplateView):
     def post(self, request, pk):
         current_user = request.user
         current_usrid = current_user.id
-        gw_fix = Fixtures.object.filter(game_week = pk)
+        gw_fix = Fixtures.objects.filter(game_week = pk)
         if entry_data_new.objects.filter(team_id__pk = current_usrid, entry_gw = pk).exists():
             update_ins = entry_data_new.objects.get(team_id__pk = current_usrid, entry_gw = pk)
             form = score_entry(request.POST, instance = update_ins)
@@ -130,11 +130,14 @@ class entryview(TemplateView):
             form = score_entry(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.pk = pk
-            post.pk = current_usrid
+            post.entry_GW = pk
+            post.entry_team = current_usrid
             post.save()
-
-        return render(request, self.template_name)
+            context = {
+                'gw_fix': gw_fix,
+                'form': form
+                }
+        return render(request, self.template_name, {'context': context})
 
 
 def logout_view(request):
