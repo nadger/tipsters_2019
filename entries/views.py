@@ -80,12 +80,6 @@ def index(request):
 
 class entryview(TemplateView):
     template_name = 'entries/entries_form_df.html'
-    #goalrange = range(10)
-    #totalgoals = range(50)
-
-    #questions = Question.objects.all()
-
-
     def get(self, request, pk):
         #game_week = Fixtures.objects.filter(game_week='1')
         current_user = request.user
@@ -110,9 +104,10 @@ class entryview(TemplateView):
                     'fixture_id8': gw_fix[7].pk,
                     'fixture_id9': gw_fix[8].pk,
                     'fixture_id10': gw_fix[9].pk,
+                    'entry_gw': current_gw,
+                    'team_id' : current_usrid,
                     })
         form = EntryFormSet
-        #form = totalgoals_form()
         context = {
             'gw_fix': gw_fix,
             'form': form
@@ -133,11 +128,12 @@ class entryview(TemplateView):
             post.entry_GW = pk
             post.entry_team = current_usrid
             post.save()
-            context = {
-                'gw_fix': gw_fix,
-                'form': form
-                }
+        context = {
+            'gw_fix': gw_fix,
+            'form': form
+            }
         return render(request, self.template_name, {'context': context})
+
 
 
 def logout_view(request):

@@ -1,10 +1,10 @@
 from django import forms
-from django.forms import ModelForm, formset_factory
+from django.forms import ModelForm, formset_factory, HiddenInput
 from django.forms.models import inlineformset_factory, modelformset_factory
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Fixtures, Players, entry_data_new, configdata, Total_Goal_Entry
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Div, Field
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Div, Field, Hidden
 from dal import autocomplete
 
 class CustomUserCreationForm(UserCreationForm):
@@ -156,6 +156,8 @@ class score_entry(forms.ModelForm):
                 'fixture_id8',
                 'fixture_id9',
                 'fixture_id10',
+                'entry_gw',
+                'team_id',
             ),
             ButtonHolder(
                 Submit('submit', 'Submit', css_class='btn btn-primary btn-lg btn-block')
@@ -182,10 +184,22 @@ class score_entry(forms.ModelForm):
         self.fields['score_away_fid8'].label = ""
         self.fields['score_away_fid9'].label = ""
         self.fields['score_away_fid10'].label = ""
+        self.fields['team_id'].widget = HiddenInput()
+        self.fields['entry_gw'].widget = HiddenInput()
+        self.fields['fixture_id1'].widget = HiddenInput()
+        self.fields['fixture_id2'].widget = HiddenInput()
+        self.fields['fixture_id3'].widget = HiddenInput()
+        self.fields['fixture_id4'].widget = HiddenInput()
+        self.fields['fixture_id5'].widget = HiddenInput()
+        self.fields['fixture_id6'].widget = HiddenInput()
+        self.fields['fixture_id7'].widget = HiddenInput()
+        self.fields['fixture_id8'].widget = HiddenInput()
+        self.fields['fixture_id9'].widget = HiddenInput()
+        self.fields['fixture_id10'].widget = HiddenInput()
 
     class Meta:
     	model = entry_data_new
-    	exclude = ('entry_gw', 'team_id')
+    	exclude = ()
 
 
 class totalgoals_form(forms.ModelForm):
