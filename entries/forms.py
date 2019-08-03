@@ -31,7 +31,22 @@ class gwadmin(forms.ModelForm):
 class score_entry(forms.ModelForm):
 	#score_home = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
 	#score_away = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
-
+    scorer_player1 = forms.ModelChoiceField(
+        queryset=Players.objects.all(),
+        widget=autocomplete.ModelSelect2(url='player-autocomplete')
+        )
+    scorer_player2 = forms.ModelChoiceField(
+        queryset=Players.objects.all(),
+        widget=autocomplete.ModelSelect2(url='player-autocomplete')
+        )
+    scorer_player3 = forms.ModelChoiceField(
+        queryset=Players.objects.all(),
+        widget=autocomplete.ModelSelect2(url='player-autocomplete')
+        )
+    scorer_player4 = forms.ModelChoiceField(
+        queryset=Players.objects.all(),
+        widget=autocomplete.ModelSelect2(url='player-autocomplete')
+        )    
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.layout = Layout(
@@ -146,6 +161,11 @@ class score_entry(forms.ModelForm):
                     css_class = 'col-3 text-center'
                     ),
                 HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.9.away_team }} </b>  </div> </div>"""),
+                'score_tg',
+                'scorer_player1',
+                'scorer_player2',
+                'scorer_player3',
+                'scorer_player4',
                 'fixture_id1',
                 'fixture_id2',
                 'fixture_id3',
@@ -184,6 +204,11 @@ class score_entry(forms.ModelForm):
         self.fields['score_away_fid8'].label = ""
         self.fields['score_away_fid9'].label = ""
         self.fields['score_away_fid10'].label = ""
+        self.fields['score_tg'].label = "Total Goals"
+        self.fields['scorer_player1'].label ="Scorer - 4 Points"
+        self.fields['scorer_player2'].label ="Scorer - 3 Points"
+        self.fields['scorer_player3'].label ="Scorer - 2 Points"
+        self.fields['scorer_player4'].label ="Scorer - 1 Points"
         self.fields['team_id'].widget = HiddenInput()
         self.fields['entry_gw'].widget = HiddenInput()
         self.fields['fixture_id1'].widget = HiddenInput()

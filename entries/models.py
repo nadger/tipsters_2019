@@ -120,6 +120,11 @@ class entry_data_new(models.Model):
 	fixture_id10 = models.ForeignKey(Fixtures, models.CASCADE, related_name="fid_f10")
 	score_home_fid10 = models.PositiveIntegerField(default=0)
 	score_away_fid10 = models.PositiveIntegerField(default=0)
+	score_tg = models.PositiveIntegerField(default=0)
+	scorer_player1 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player1_scorer", null=True)
+	scorer_player2 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player2_scorer", null=True)
+	scorer_player3 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player3_scorer", null=True)
+	scorer_player4 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player4_scorer", null=True)
 
 class Total_Goal_Entry(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="TG_Game_Week")
