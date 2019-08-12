@@ -37,9 +37,9 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
 
       <h1 class="display-4">KHSSC Tipsters</h1>
-    
+
       <p class="lead">{{ user.username }}</p>
-      
+
     </div>
 
     <div class="container">
@@ -49,32 +49,33 @@
             <h4 class="my-0 font-weight-normal">Set Up</h4>
           </div>
           <div class="card-body">
-            <a href="/entries/entry" >
-            <button type="button" class="btn btn-lg btn-block btn-primary">Game Week</button > 
+            <a href="/entries/admin/gwview" >
+            <button type="button" class="btn btn-lg btn-block btn-primary">Game Week List</button >
           </a><br>
-          <a href="/entries/entry" >
-            <button type="button" class="btn btn-lg btn-block btn-primary">Fixtures</button > 
+          <a href="/entries/admin/gw_create" >
+            <button type="button" class="btn btn-lg btn-block btn-primary">New Game Week</button >
           </a>
           <br>
           <a href="/entries/entry" >
-            <button type="button" class="btn btn-lg btn-block btn-primary">Questions</button > 
+            <button type="button" class="btn btn-lg btn-block btn-primary">Fixtures</button >
           </a>
           </div>
         </div>
         <div class="card mb-4 box-shadow">
           <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Results</h4>
+            <h4 class="my-0 font-weight-normal">Results Entry</h4>
           </div>
           <div class="card-body">
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Enter this weeks results</li>
-            </ul>
-            <a href="/entries/results">
-            <button type="button" class="btn btn-lg btn-block btn-primary">Results</button>
-          </a>
+            
+            {% for item in not_closed_gw %}
+            <a href="/entries/admin/gw_results/{{ item.pk }}" >
+            <button type="button" class="btn btn-lg btn-block btn-primary">Game week {{ item.gameweek }} </button >
+            </a>
+            <br>
+            {% endfor %}
           </div>
         </div>
-        
+
       </div>
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -88,7 +89,7 @@
     </div>
 
 
-   
+
   </body>
 </html>
 {% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <title>Tipsters - Entry Form</title>
+
+  </head>
+  <body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+
+      <h5 class="my-0 mr-md-auto font-weight-normal">KHSSC Tipsters</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/entries/menu">Menu</a>
+        <a class="p-2 text-dark" href="/entries/gwresult">Results</a>
+        <a class="p-2 text-dark" href="#">Contact Us</a>
+      </nav>
+      <!--<a class="btn btn-outline-primary" href="/entries/login">Sign in</a> -->
+    </div>
+  <body class="bg-white">
+    <div class="container">
+  <div class="py-3 text-center">
+    <!--<img class="d-block mx-auto mb-3" src="http://khssc.co.uk/wp-content/uploads/2017/05/cropped-title-2-1.jpg" alt="" width="700" height="100"> -->
+    <!--<img class="mb-4" src="{% static "/entries/logo_small.jpg" %}" alt="" width="100" height="100"> -->
+    <h2>Game Week {{context.gwdata.gameweek}} - Results Entry</h2>
+    <p class="lead">Deadline: {{context.gwdata.gw_deadline}}</p>
+  </div>
+  <div class="row">
+    <div class="col-3 text-center">
+      <h4>Home</h4>
+    </div>
+    <div class="col-3 text-center">
+      Score
+    </div>
+    <div class="col-3 text-center">
+      Score
+    </div>
+    <div class="col-3 text-center">
+      <h4>Away</h4>
+    </div>
+  </div>
+  {{ context.form.errors }}
+{{ context.form.non_field_errors }}
+
+  {% load crispy_forms_tags %}
+  {% crispy context.form %}
+
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2019 K.H.S.S.C</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+  </body>
+
+ </html>
+
+{% endblock %}
