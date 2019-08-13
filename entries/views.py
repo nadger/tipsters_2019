@@ -253,24 +253,25 @@ class GWDelete(DeleteView):
         context = super().get_context_data(**kwargs)
         return context
 
-class processgwresult(TemplateView):
-    pk = 1
-    current_gw = pk
-    gw_entries = entry_data_new.objects.filter(game_week__pk = current_gw)
-    gw_results = gw_results.objects.get(game_week__pk = current_gw)
-    if res.score_home_fid1 > entry.score_away_fid1
-        result = 'homew'
-    else if res.score_away_fid1 > entry.score_home_fid1
-        reslut = 'awaywin'
-    else if res.score_home_fid1 = entry.score_away_fid1
-        result = 'draw'
-
-    for entry in gw_entries:
-        gw_fix_id = entry.fixture_id1
-        if entry.score_home_fid1 > entry.score_away_fid1
-            ent_result = 'homew'
-        else if entry.score_away_fid1 > entry.score_home_fid1
-            ent_reslut = 'awaywin'
-        else if entry.score_home_fid1 = entry.score_away_fid1
-            ent_result = 'draw'
-        score = 5
+#class processgwresult(TemplateView):
+#    pk = 1
+#    current_gw = pk
+#    gw_entries = entry_data_new.objects.filter(game_week__pk = current_gw)
+#    gw_results = gw_results.objects.get(game_week__pk = current_gw)
+#    if res.score_home_fid1 > entry.score_away_fid1
+#        result = 'homew'
+#    else if res.score_away_fid1 > entry.score_home_fid1
+#        reslut = 'awaywin'
+#    else if res.score_home_fid1 = entry.score_away_fid1
+#        result = 'draw'
+#
+#    for entry in gw_entries:
+##        gw_fix_id = entry.fixture_id1
+#        if entry.score_home_fid1 > entry.score_away_fid1 
+##            ent_result = 'homew'
+#        else if entry.score_away_fid1 > entry.score_home_fid1
+#            ent_reslut = 'awaywin'
+#        else if entry.score_home_fid1 = entry.score_away_fid1
+##            ent_result = 'draw'
+#        score = 5
+#
