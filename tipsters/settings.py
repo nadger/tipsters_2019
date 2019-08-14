@@ -25,7 +25,7 @@ SECRET_KEY = 'v84))zj+y4p9bo4-n+5_=0ltn3^)b8!7cj+w_vxzp@8)edpsh&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://tipsters.pythonanywhere.com']
+ALLOWED_HOSTS = ['tipsters.pythonanywhere.com', 'localhost']
 
 
 # Application definition
