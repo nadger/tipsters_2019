@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from django.contrib.auth.decorators import login_required, permission_required
 from entries.views import PlayerAutocomplete
 from . import views
@@ -8,7 +8,7 @@ urlpatterns = [
     path('entry', views.index, name='index'),
     path('entry2', login_required(views.entryview.as_view()), name='entry2'),
     path('entry/<int:pk>', login_required(views.entryview.as_view()), name='entry'),
-    path('login', views.login, name='login'),
+    path('accounts', include('django.contrib.auth.urls')),
     path('menu', views.menu, name='menu'),
     path('error', views.menu, name='error'),
     path('admin', views.admin, name='admin'),
