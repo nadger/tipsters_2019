@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/gw_delete/<int:pk>', views.GWDelete.as_view(), name='GW_delete'),
     path('admin/fix_update/<int:pk>', views.FixUpdate, name='FixUpdate'),
     path('admin/gw_results/<int:pk>', login_required(views.gwresults.as_view()), name='gwresults'),
-    re_path(r'^player-autocomplete/$', login_required(PlayerAutocomplete.as_view()), name='player-autocomplete'),
+    re_path(r'^player-autocomplete/$', login_required(PlayerAutocomplete.as_view(create_field='name')), name='player-autocomplete'),
 
 ]

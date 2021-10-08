@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from datetime import datetime
+BOOL_CHOICES = ((True, 'True'), (False, 'False'))
 
 class CustomUser(AbstractUser):
 	comments=models.CharField(max_length=100,null=True)
@@ -121,10 +122,32 @@ class entry_data_new(models.Model):
 	score_home_fid10 = models.PositiveIntegerField(default=0)
 	score_away_fid10 = models.PositiveIntegerField(default=0)
 	score_tg = models.PositiveIntegerField(default=0)
-	scorer_player1 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player1_scorer", null=True)
-	scorer_player2 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player2_scorer", null=True)
-	scorer_player3 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player3_scorer", null=True)
-	scorer_player4 = models.ForeignKey('Players', on_delete=models.CASCADE, related_name="player4_scorer", null=True)
+	scorer_player1_ff = models.CharField(max_length=50, null=True)
+	scorer_player2_ff = models.CharField(max_length=50, null=True)
+	scorer_player3_ff = models.CharField(max_length=50, null=True)
+	scorer_player4_ff = models.CharField(max_length=50, null=True)
+	TRUE = 'TRUE'
+	FALSE = 'FALSE'
+	question_choices = [
+		(TRUE, 'True'),
+		(FALSE, 'False')
+	]
+	question_id1 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f1")
+	question_answer_id1 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id2 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f2")
+	question_answer_id2 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id3 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f3")
+	question_answer_id3 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id4 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f4")
+	question_answer_id4 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id5 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f5")
+	question_answer_id5 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id6 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f6")
+	question_answer_id6 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id7 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f7")
+	question_answer_id7 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
+	question_id8 = models.ForeignKey(Question, models.CASCADE, related_name="qid_f8")
+	question_answer_id8 = models.CharField(default=TRUE, choices=question_choices, max_length=5)
 
 class Total_Goal_Entry(models.Model):
 	entry_gw = models.ForeignKey(configdata, models.CASCADE, related_name="TG_Game_Week")

@@ -25,7 +25,7 @@ SECRET_KEY = 'v84))zj+y4p9bo4-n+5_=0ltn3^)b8!7cj+w_vxzp@8)edpsh&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tipsters.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['tipsters.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -127,4 +127,6 @@ LOGIN_REDIRECT_URL = '/entries/menu'
 
 AUTH_USER_MODEL = 'entries.CustomUser'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

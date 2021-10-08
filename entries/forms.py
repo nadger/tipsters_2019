@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Fixtures, Players, entry_data_new, configdata, Total_Goal_Entry, gw_results
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, HTML, Div, Field, Hidden
+from crispy_forms.bootstrap import InlineRadios
 from dal import autocomplete
 
 class CustomUserCreationForm(UserCreationForm):
@@ -198,24 +199,11 @@ class result_entry(forms.ModelForm):
         exclude = ()
 
 class score_entry(forms.ModelForm):
+    # CURRRENT ENTRY FORM
 	#score_home = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
 	#score_away = forms.DecimalField(min_value=0,max_value=20,max_digits=2,decimal_places=0,initial=0,required=True)
-    scorer_player1 = forms.ModelChoiceField(
-        queryset=Players.objects.all(),
-        widget=autocomplete.ModelSelect2(url='player-autocomplete')
-        )
-    scorer_player2 = forms.ModelChoiceField(
-        queryset=Players.objects.all(),
-        widget=autocomplete.ModelSelect2(url='player-autocomplete')
-        )
-    scorer_player3 = forms.ModelChoiceField(
-        queryset=Players.objects.all(),
-        widget=autocomplete.ModelSelect2(url='player-autocomplete')
-        )
-    scorer_player4 = forms.ModelChoiceField(
-        queryset=Players.objects.all(),
-        widget=autocomplete.ModelSelect2(url='player-autocomplete')
-        )
+
+
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
         self.helper.layout = Layout(
@@ -331,10 +319,27 @@ class score_entry(forms.ModelForm):
                     ),
                 HTML("""<div class="col-3 text-center"> <b> {{ context.gw_fix.9.away_team }} </b>  </div> </div>"""),
                 'score_tg',
-                'scorer_player1',
-                'scorer_player2',
-                'scorer_player3',
-                'scorer_player4',
+
+                HTML(""" {{ context.gw_questions.0 }}?<br>"""),
+                InlineRadios('question_answer_id1'),
+                HTML("""{{ context.gw_questions.1 }}?"""),
+                InlineRadios('question_answer_id2'),
+                HTML(""" {{ context.gw_questions.2 }}?<br>"""),
+                InlineRadios('question_answer_id3'),
+                HTML("""{{ context.gw_questions.3 }}?"""),
+                InlineRadios('question_answer_id4'),
+                HTML(""" {{ context.gw_questions.4 }}?<br>"""),
+                InlineRadios('question_answer_id5'),
+                HTML("""{{ context.gw_questions.5 }}?"""),
+                InlineRadios('question_answer_id6'),
+                HTML(""" {{ context.gw_questions.6 }}?<br>"""),
+                InlineRadios('question_answer_id7'),
+                HTML("""{{ context.gw_questions.7 }}?"""),
+                InlineRadios('question_answer_id8'),
+                'scorer_player1_ff',
+                'scorer_player2_ff',
+                'scorer_player3_ff',
+                'scorer_player4_ff',
                 'fixture_id1',
                 'fixture_id2',
                 'fixture_id3',
@@ -347,6 +352,14 @@ class score_entry(forms.ModelForm):
                 'fixture_id10',
                 'entry_gw',
                 'team_id',
+                'question_id1',
+                'question_id2',
+                'question_id3',
+                'question_id4',
+                'question_id5',
+                'question_id6',
+                'question_id7',
+                'question_id8',
             ),
             ButtonHolder(
                 Submit('submit', 'Submit', css_class='btn btn-primary btn-lg btn-block')
@@ -374,10 +387,18 @@ class score_entry(forms.ModelForm):
         self.fields['score_away_fid9'].label = ""
         self.fields['score_away_fid10'].label = ""
         self.fields['score_tg'].label = "Total Goals"
-        self.fields['scorer_player1'].label ="Scorer - 4 Points"
-        self.fields['scorer_player2'].label ="Scorer - 3 Points"
-        self.fields['scorer_player3'].label ="Scorer - 2 Points"
-        self.fields['scorer_player4'].label ="Scorer - 1 Points"
+        self.fields['scorer_player1_ff'].label ="Scorer - 4 Points"
+        self.fields['scorer_player2_ff'].label ="Scorer - 3 Points"
+        self.fields['scorer_player3_ff'].label ="Scorer - 2 Points"
+        self.fields['scorer_player4_ff'].label ="Scorer - 1 Points"
+        self.fields['question_answer_id1'].label = ""
+        self.fields['question_answer_id2'].label = ""
+        self.fields['question_answer_id3'].label = ""
+        self.fields['question_answer_id4'].label = ""
+        self.fields['question_answer_id5'].label = ""
+        self.fields['question_answer_id6'].label = ""
+        self.fields['question_answer_id7'].label = ""
+        self.fields['question_answer_id8'].label = ""
         self.fields['team_id'].widget = HiddenInput()
         self.fields['entry_gw'].widget = HiddenInput()
         self.fields['fixture_id1'].widget = HiddenInput()
@@ -390,6 +411,17 @@ class score_entry(forms.ModelForm):
         self.fields['fixture_id8'].widget = HiddenInput()
         self.fields['fixture_id9'].widget = HiddenInput()
         self.fields['fixture_id10'].widget = HiddenInput()
+        self.fields['question_id1'].widget = HiddenInput()
+        self.fields['question_id2'].widget = HiddenInput()
+        self.fields['question_id3'].widget = HiddenInput()
+        self.fields['question_id4'].widget = HiddenInput()
+        self.fields['question_id5'].widget = HiddenInput()
+        self.fields['question_id6'].widget = HiddenInput()
+        self.fields['question_id7'].widget = HiddenInput()
+        self.fields['question_id8'].widget = HiddenInput()
+
+
+
 
     class Meta:
     	model = entry_data_new
